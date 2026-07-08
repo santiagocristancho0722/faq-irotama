@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preguntas Frecuentes · Irotama Resort</title>
+<style>
+  :root{
+    --navy:#023859;
+    --mid:#2A5E95;
+    --blue:#6399BA;
+    --gray:#808080;
+    --line:#D1D1D1;
+    --soft:#f5f8fb;
+    --soft2:#eef3f8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Segoe UI",-apple-system,"Helvetica Neue",Arial,sans-serif;
+    color:#1c2b36;background:var(--soft);line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 22px}
+
+  /* HERO */
+  header{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--mid) 100%);
+    color:#fff;padding:62px 22px 54px;text-align:center;
+  }
+  header .inner{max-width:880px;margin:0 auto}
+  .eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--blue);font-weight:700;margin-bottom:14px}
+  header h1{font-size:2.7rem;font-weight:700;letter-spacing:-.01em;line-height:1.08}
+  header p{margin-top:16px;color:#cfe0ec;font-size:1.04rem;max-width:600px;
+    margin-left:auto;margin-right:auto}
+
+  /* KPI BAND */
+  .meta-band{background:var(--navy);display:flex;flex-wrap:wrap;justify-content:center}
+  .meta-band .item{flex:1 1 150px;padding:18px 18px;text-align:center;
+    border-right:1px solid rgba(255,255,255,.12)}
+  .meta-band .item:last-child{border-right:none}
+  .meta-band .num{color:#fff;font-size:1.5rem;font-weight:700}
+  .meta-band .lbl{color:var(--blue);font-size:.7rem;letter-spacing:.1em;
+    text-transform:uppercase;margin-top:4px}
+
+  /* TABS */
+  .tabsbar{position:sticky;top:0;z-index:20;background:#fff;
+    border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(2,56,89,.06)}
+  .tabs{max-width:880px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;
+    padding:0 14px;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:none;border:none;background:none;cursor:pointer;
+    padding:16px 16px 13px;font-size:.92rem;font-weight:600;color:var(--gray);
+    border-bottom:3px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;
+    font-family:inherit}
+  .tab:hover{color:var(--mid)}
+  .tab.active{color:var(--navy);border-bottom-color:var(--blue)}
+
+  /* PANELS */
+  .panel{display:none;padding:40px 0 70px}
+  .panel.active{display:block;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .lead{background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);
+    border-radius:10px;padding:20px 22px;margin-bottom:10px;color:#3a4a57}
+  .lead h2{color:var(--navy);font-size:1.35rem;margin-bottom:6px;font-weight:700}
+  .lead .where{color:var(--gray);font-size:.9rem;margin-top:8px}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 4px}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:10px 14px;min-width:96px;text-align:center;flex:1 1 auto}
+  .chip .n{display:block;color:var(--navy);font-size:1.25rem;font-weight:700}
+  .chip .t{color:var(--gray);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+
+  .section-title{margin:34px 0 4px;color:var(--navy);font-size:.95rem;font-weight:700;
+    letter-spacing:.05em;text-transform:uppercase}
+  .section-title .bar{display:inline-block;width:28px;height:3px;background:var(--blue);
+    vertical-align:middle;margin-right:10px;border-radius:2px}
+
+  /* ROOM CARDS */
+  .rooms{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+  .roomcard{background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:16px 18px;transition:border-color .2s,box-shadow .2s}
+  .roomcard:hover{border-color:var(--blue);box-shadow:0 4px 16px rgba(2,56,89,.07)}
+  .rc-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .roomcard h4{color:var(--navy);font-size:1.06rem;font-weight:700}
+  .rc-meta{color:var(--mid);font-size:.84rem;font-weight:600}
+  .roomcard p{color:#3a4a57;font-size:.92rem;margin:8px 0 13px}
+  .btn-res{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;
+    font-weight:600;font-size:.86rem;padding:9px 20px;border-radius:8px;transition:background .2s}
+  .btn-res:hover{background:var(--mid)}
+
+  details{background:#fff;border:1px solid var(--line);border-radius:10px;
+    margin-top:12px;overflow:hidden;transition:border-color .2s}
+  details[open]{border-color:var(--blue)}
+  summary{cursor:pointer;list-style:none;padding:17px 20px;font-weight:600;
+    color:var(--navy);font-size:1rem;display:flex;justify-content:space-between;
+    align-items:center;gap:14px}
+  summary::-webkit-details-marker{display:none}
+  summary .plus{flex:none;width:24px;height:24px;border-radius:50%;background:var(--soft);
+    color:var(--mid);font-size:1.2rem;line-height:22px;text-align:center;
+    transition:transform .25s,background .2s,color .2s}
+  details[open] summary .plus{transform:rotate(45deg);background:var(--blue);color:#fff}
+  .body{padding:0 20px 18px;color:#3a4a57}
+  .body p{margin-bottom:9px}
+  .body ul{margin:6px 0;list-style:none}
+  .body li{padding:6px 0 6px 22px;position:relative;border-bottom:1px solid var(--soft)}
+  .body li:last-child{border-bottom:none}
+  .body li::before{content:"";position:absolute;left:3px;top:14px;width:7px;height:7px;
+    border-radius:50%;background:var(--blue)}
+  .body strong{color:var(--navy)}
+
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .tag{background:var(--soft);border:1px solid var(--line);color:var(--mid);
+    font-size:.84rem;padding:6px 12px;border-radius:20px}
+
+  .todo{display:inline-block;background:#fff4e0;border:1px solid #f0c674;color:#9a6b00;
+    font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;font-weight:700;
+    padding:3px 9px;border-radius:12px;margin-left:8px;vertical-align:middle}
+
+  /* DIRECTORY TABLE */
+  .dirtable{width:100%;border-collapse:collapse;margin-top:8px;font-size:.92rem}
+  .dirtable th,.dirtable td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--line)}
+  .dirtable thead th{background:var(--navy);color:#fff;font-weight:600;font-size:.8rem;
+    letter-spacing:.03em;text-transform:uppercase}
+  .dirtable tbody tr:nth-child(even){background:var(--soft)}
+  .dirtable td:first-child{font-weight:600;color:var(--navy)}
+  .dirtable .ext{font-weight:700;color:var(--mid);text-align:center}
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin-top:8px}
+
+  /* EXTENSION GRID */
+  .extgrid{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .extitem{flex:1 1 calc(50% - 8px);min-width:160px;display:flex;justify-content:space-between;
+    align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:8px;
+    padding:9px 13px}
+  .extitem .name{color:#3a4a57;font-size:.9rem}
+  .extitem .code{font-weight:700;color:var(--mid);background:var(--soft);border-radius:6px;
+    padding:2px 9px;font-size:.9rem;flex:none}
+
+  /* STEPS */
+  ol.steps{margin:6px 0 6px 0;padding-left:0;list-style:none;counter-reset:s}
+  ol.steps li{counter-increment:s;position:relative;padding:7px 0 7px 34px;
+    border-bottom:1px solid var(--soft)}
+  ol.steps li:last-child{border-bottom:none}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:7px;width:22px;height:22px;
+    background:var(--blue);color:#fff;border-radius:50%;font-size:.8rem;font-weight:700;
+    text-align:center;line-height:22px}
+  .note{background:var(--soft);border-left:3px solid var(--blue);border-radius:6px;
+    padding:10px 13px;margin-top:10px;font-size:.88rem;color:#3a4a57}
+  .dial{background:var(--soft2);border-radius:6px;padding:2px 8px;font-weight:700;
+    color:var(--navy);font-family:"Consolas",monospace}
+
+  /* CONTACT */
+  .contact{margin-top:30px;background:var(--navy);color:#fff;border-radius:14px;
+    padding:32px 30px;text-align:center}
+  .contact h3{font-size:1.25rem;font-weight:700;margin-bottom:6px}
+  .contact p{color:#cfe0ec;margin-bottom:18px}
+  .contact .rows{display:flex;flex-direction:column;gap:10px;max-width:520px;margin:0 auto}
+  .contact .row{display:flex;justify-content:space-between;gap:14px;padding:11px 16px;
+    background:rgba(255,255,255,.06);border-radius:8px;font-size:.92rem;text-align:left}
+  .contact .row span:first-child{color:var(--blue);font-weight:600;flex:none}
+  .contact .row span:last-child{text-align:right}
+  .contact a{color:#fff;text-decoration:none}
+
+  footer{text-align:center;color:var(--gray);font-size:.8rem;margin:30px auto 50px;
+    line-height:1.7;max-width:880px;padding:0 22px}
+  footer a{color:var(--mid);text-decoration:none}
+
+  @media(max-width:560px){
+    header h1{font-size:2rem}
+    .meta-band .item{flex-basis:33%;border-right:none}
+    .contact .row{flex-direction:column;gap:2px}
+    .contact .row span:last-child{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="eyebrow">Santa Marta · Caribe Colombiano</div>
+    <h1>Irotama Resort</h1>
+    <p>Preguntas frecuentes del complejo hotelero y de cada uno de sus seis hoteles. Selecciona una sección para conocer alojamiento, servicios y experiencias.</p>
+  </div>
+</header>
+
+<div class="meta-band">
+  <div class="item"><div class="num">6</div><div class="lbl">Hoteles</div></div>
+  <div class="item"><div class="num">+1 km</div><div class="lbl">Playa privada</div></div>
+  <div class="item"><div class="num">13</div><div class="lbl">Restaurantes</div></div>
+  <div class="item"><div class="num">600</div><div class="lbl">Pax eventos</div></div>
+</div>
+
+<div class="tabsbar">
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-target="general">El Resort</button>
+    <button class="tab" data-target="lago">Irotama del Lago</button>
+    <button class="tab" data-target="bb">Bungalows &amp; Bohíos</button>
+    <button class="tab" data-target="sol">Irotama del Sol</button>
+    <button class="tab" data-target="mar">Irotama del Mar</button>
+    <button class="tab" data-target="xxi">Irotama XXI</button>
+    <button class="tab" data-target="reservado">Irotama Reservado</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ============ GENERAL ============ -->
+  <section class="panel active" id="general">
+    <div class="lead">
+      <h2>Sobre Irotama Resort</h2>
+      <p>Irotama es un complejo turístico ubicado en la costa caribeña de Santa Marta, compuesto por seis hoteles independientes que comparten más de 1 km de playa privada, gastronomía, zonas de bienestar y espacios para eventos.</p>
+      <div class="where">Bello Horizonte · Pozos Colorados · Km 14 vía Ciénaga, Santa Marta, Magdalena</div>
+    </div>
+
+    <div class="section-title"><span class="bar"></span>Generalidades</div>
+
+    <details open>
+      <summary>¿Qué es Irotama Resort y cómo está conformado?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Es un complejo hotelero frente al mar Caribe compuesto por seis hoteles, cada uno con su propio estilo y tipo de alojamiento:</p>
+        <ul>
+          <li><strong>Irotama del Lago</strong> — habitaciones modernas para parejas y familias.</li>
+          <li><strong>Bungalows &amp; Bohíos</strong> — cabañas rodeadas de naturaleza, cerca de la playa.</li>
+          <li><strong>Irotama del Sol</strong> — suites y penthouses amplios para familias y grupos.</li>
+          <li><strong>Irotama del Mar</strong> — suites frente al mar con zona de marina.</li>
+          <li><strong>Irotama XXI</strong> — habitaciones y junior suites prácticas.</li>
+          <li><strong>Irotama Reservado</strong> — apartasuites tipo apartamento con cocina.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿Dónde está ubicado el resort?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>En la zona de Bello Horizonte y Pozos Colorados, sobre el Km 14 de la vía a Ciénaga, en Santa Marta (Magdalena). Está cerca de centros comerciales, restaurantes y zonas de ocio, en una de las áreas más exclusivas de la ciudad.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿Cómo llego desde el aeropuerto?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>El resort se encuentra muy cerca del Aeropuerto Internacional Simón Bolívar. Varios de los hoteles ofrecen <strong>servicio de transporte al aeropuerto</strong>; te recomendamos coordinarlo previamente con el equipo de reservas.</p>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Servicios del complejo</div>
+
+    <details>
+      <summary>¿Qué ofrece el resort más allá del alojamiento?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Una experiencia completa dentro del mismo complejo:</p>
+        <div class="tags">
+          <span class="tag">+1 km de playa</span>
+          <span class="tag">13 restaurantes y bares</span>
+          <span class="tag">Piscinas</span>
+          <span class="tag">Spa y zonas húmedas</span>
+          <span class="tag">Gimnasio</span>
+          <span class="tag">Sendero ecológico</span>
+          <span class="tag">Espacios deportivos</span>
+          <span class="tag">Centro de convenciones (600 pax)</span>
+          <span class="tag">Transporte interno</span>
+          <span class="tag">Parqueadero sin costo</span>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿Hay restaurantes dentro del resort?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Sí. El complejo cuenta con <strong>13 restaurantes y bares</strong> distribuidos entre los distintos hoteles, con una variedad de platos que combinan lo mejor del Caribe colombiano y las cocinas del mundo.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿El resort realiza eventos y bodas?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Sí. Irotama dispone de un <strong>centro de convenciones para 600 personas</strong> y espacios para eventos sociales, corporativos y bodas frente al Caribe. Las cotizaciones de eventos se gestionan con el equipo comercial.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿Hay actividades para niños?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Sí. El complejo ofrece actividades recreativas y espacios pensados para los más pequeños, como el Mini Club Infantil, además de las zonas de playa y piscina.</p>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Planes todo incluido</div>
+
+    <details>
+      <summary>¿En qué consiste el plan Full Irotama?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Es un plan todo incluido disponible para cada hotel del resort (Full Lago, Full Mar, Full Sol, Full XXI, Full Reservado y Full Bungalow Estándar). Incluye:</p>
+        <ul>
+          <li>Traslados aeropuerto–hotel–aeropuerto (servicio colectivo)</li>
+          <li>Bebida de bienvenida</li>
+          <li>Alojamiento según el tipo de habitación y número de noches</li>
+          <li>Desayunos, almuerzos y cenas</li>
+          <li>Open bar con licores seleccionados, servidos por trago en horarios y bares programados</li>
+          <li>Snacks AM y PM</li>
+          <li>Actividades recreativas</li>
+          <li>Parqueadero sin costo adicional</li>
+        </ul>
+        <div class="note">Los restaurantes <strong>Barra Viva</strong> y <strong>Caravel</strong> no están incluidos en el plan.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿El parqueadero tiene costo?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>No. El resort cuenta con <strong>parqueadero sin costo adicional</strong> para los huéspedes.</p>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Actividades y experiencias</div>
+
+    <details>
+      <summary>¿Qué actividades ofrece el resort?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Hay programación para todos los gustos a lo largo del día:</p>
+        <ul>
+          <li><strong>Actividades deportivas</strong> — desde aeróbicos y spinning hasta fútbol playa.</li>
+          <li><strong>Actividades infantiles</strong> — origami, juegos acuáticos y bailes (siempre acompañados de un adulto responsable).</li>
+          <li><strong>Deportes acuáticos</strong> — en alianza con la Escuela Náutica: paseos en velero y catamarán, clases de paddle board, kayak y más.</li>
+          <li><strong>Actividades nocturnas</strong> — karaoke, música en vivo y juegos.</li>
+          <li><strong>Experiencias frente al mar</strong> — cenas románticas, bodas, aniversarios y eventos empresariales a la orilla del mar.</li>
+        </ul>
+        <div class="note">Consulta la programación vigente en <a href="https://ironoticias.co/ironoticias/">ironoticias.co</a>.</div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Servicios desde tu habitación</div>
+
+    <details>
+      <summary>¿Cómo programo el servicio de despertador?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Marca <span class="dial">*81</span> y sigue las instrucciones, usando horario militar (24h). Por ejemplo, para las 6:00 a.m. marca <span class="dial">0600</span>; para las 9:30 p.m. marca <span class="dial">2130</span>.</p>
+        <p>Para cancelar la orden, marca <span class="dial">*82</span>.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿Cómo me conecto al Wi-Fi?<span class="plus">+</span></summary>
+      <div class="body">
+        <ol class="steps">
+          <li>Conéctate a la red <strong>"IROTAMA"</strong>.</li>
+          <li>Ingresa la contraseña de la red: <span class="dial">@irotama</span></li>
+          <li>En la ventana de autenticación, selecciona <strong>HUÉSPEDES</strong>, ingresa el número de identificación con el que te registraste, acepta los términos y condiciones y da clic en "navegar ahora".</li>
+        </ol>
+        <div class="note">Puedes conectar hasta <strong>3 dispositivos</strong> por cada número de identificación registrado. El proceso debe repetirse cada 72 horas.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿Cómo hago llamadas externas (locales, nacionales, internacionales y celular)?<span class="plus">+</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Locales</strong> — marca 0 + número de siete dígitos. No tienen costo.</li>
+          <li><strong>Larga distancia nacional</strong> — marca 0 + 07 + número de siete dígitos.</li>
+          <li><strong>Larga distancia internacional</strong> — marca 0 + 007 + indicativo del país + código de área + número.</li>
+          <li><strong>Celular</strong> — marca 0 + 03 + número celular.</li>
+        </ul>
+        <div class="note">El valor de las llamadas nacionales, internacionales y a celular se carga directamente a tu cuenta. Para asistencia, comunícate con Guest Service marcando <span class="dial">75</span>.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿Qué extensión marco para los servicios generales del resort?<span class="plus">+</span></summary>
+      <div class="body">
+        <div class="extgrid">
+          <div class="extitem"><span class="name">Operadora</span><span class="code">9</span></div>
+          <div class="extitem"><span class="name">Servicio al cliente / Guest Service</span><span class="code">75</span></div>
+          <div class="extitem"><span class="name">Médico y enfermería</span><span class="code">73</span></div>
+          <div class="extitem"><span class="name">Lavandería</span><span class="code">77</span></div>
+          <div class="extitem"><span class="name">Gym &amp; Spa (Irotama Resort)</span><span class="code">78</span></div>
+          <div class="extitem"><span class="name">Sala de masajes, sauna y turco</span><span class="code">70</span></div>
+          <div class="extitem"><span class="name">Canchas de tenis</span><span class="code">69</span></div>
+          <div class="extitem"><span class="name">Servicios náuticos</span><span class="code">68</span></div>
+          <div class="extitem"><span class="name">Artesanías</span><span class="code">67</span></div>
+          <div class="extitem"><span class="name">La Tienda Boutique</span><span class="code">83</span></div>
+          <div class="extitem"><span class="name">ICI (Irotama Club International)</span><span class="code">76</span></div>
+          <div class="extitem"><span class="name">Pizzería</span><span class="code">58</span></div>
+          <div class="extitem"><span class="name">Buffetería</span><span class="code">63</span></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Reservas y estadía</div>
+
+    <details>
+      <summary>¿Cómo puedo hacer una reserva?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Puedes reservar a través del sitio web <strong>irotama.com</strong>, escribiendo al correo de reservas o comunicándote por teléfono y WhatsApp. Encuentra todos los datos al final de esta página.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿Cuál es el horario de check-in y check-out?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>El horario estándar es <strong>check-in a partir de las 4:00 p.m.</strong> y <strong>check-out hasta las 12:00 m.</strong> (mediodía). Si necesitas llegar antes o salir más tarde, el early check-in y late check-out están sujetos a disponibilidad; consúltalo con recepción o con tu asesor de reservas.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿Qué métodos de pago aceptan?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Puedes pagar tu reserva y consumos dentro del resort con <strong>tarjetas de crédito y débito</strong> (Visa, Mastercard y American Express), <strong>transferencia bancaria</strong> o <strong>efectivo</strong> en el hotel. Según el canal por el que reserves (sitio web, línea de reservas o agencia), también pueden estar disponibles opciones como PSE, Nequi o pago a cuotas.</p>
+        <div class="note">Los medios de pago exactos y las cuotas disponibles pueden variar según el canal y la fecha de reserva; confírmalos con el equipo de reservas al momento de cotizar.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿Cuál es la política de cancelación?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Las condiciones de cancelación y modificación dependen de la <strong>tarifa reservada</strong>: algunas tarifas permiten cancelación gratuita hasta un número determinado de días antes de la llegada, mientras que las tarifas promocionales o no reembolsables pueden tener cargos por cancelación o cambio de fechas.</p>
+        <p>Revisa la política específica indicada en tu confirmación de reserva, o consulta con el equipo de reservas antes de confirmar si necesitas flexibilidad.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿El resort admite mascotas?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>El hotel <strong>Bungalows &amp; Bohíos</strong> es Pet Friendly. Para una estadía segura y cómoda, te recomendamos revisar el reglamento de mascotas antes de tu llegada. Las demás torres pueden tener condiciones distintas; confírmalo con reservas.</p>
+      </div>
+    </details>
+
+    <div class="contact" id="contacto">
+      <h3>Contacto y reservas</h3>
+      <p>Nuestro equipo te acompaña durante todo el proceso.</p>
+      <div class="rows">
+        <div class="row"><span>Reservas</span><span><a href="mailto:reservas@irotama.com">reservas@irotama.com</a></span></div>
+        <div class="row"><span>Confirmaciones</span><span><a href="mailto:confirmacionreservas1@irotama.com">confirmacionreservas1@irotama.com</a></span></div>
+        <div class="row"><span>Teléfonos</span><span>+57 605 423 7171 · +57 601 326 4300</span></div>
+        <div class="row"><span>WhatsApp</span><span><a href="https://api.whatsapp.com/send?phone=576013139330">+57 601 313 9330</a></span></div>
+        <div class="row"><span>Redes</span><span>Instagram &amp; Facebook: @irotamaresort</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LAGO ============ -->
+  <section class="panel" id="lago">
+    <div class="lead">
+      <h2>Irotama del Lago</h2>
+      <p>Un hotel moderno dentro del complejo Irotama, con habitaciones equipadas y acceso a playa privada, zonas húmedas y áreas de relajación. Ideal para parejas y familias.</p>
+      <div class="where">Calle 115 #2-60, Bello Horizonte, Santa Marta</div>
+    </div>
+    <div class="chips">
+      <div class="chip"><span class="n">192</span><span class="t">Habitaciones</span></div>
+      <div class="chip"><span class="n">4</span><span class="t">Categorías</span></div>
+      <div class="chip"><span class="n">42–105</span><span class="t">m² por hab.</span></div>
+    </div>
+
+    <div class="section-title"><span class="bar"></span>Alojamiento y reservas</div>
+    <div class="rooms">
+      <div class="roomcard">
+        <div class="rc-head"><h4>Estándar</h4><span class="rc-meta">42 m² · 2 huéspedes</span></div>
+        <p>Cama king y ambiente caribeño. Equipada con TV cable, Wi-Fi, cafetera, aire acondicionado, baño privado, secador y balcón.</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irolago/?partner=6546&priority_room=stnd&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Estándar King</h4><span class="rc-meta">48 m² · 1–2 personas</span></div>
+        <p>Cama king, Wi-Fi gratis, TV satelital o cable, cafetera, balcón, aire acondicionado, baño privado, secador y toallas.</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irolago/?partner=6546&priority_room=stdk&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Superior Esquinera</h4><span class="rc-meta">48 m² · 1–2 personas</span></div>
+        <p>Gran vista al mar y a la naturaleza. Cama king, Wi-Fi, TV satelital o cable, cafetera, aire acondicionado, baño privado con secador y balcón.</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irolago/?partner=6546&priority_room=supe&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Luxury</h4><span class="rc-meta">105 m² · 2–4 personas</span></div>
+        <p>Suite con cama king, cocina equipada, sala con sofá, comedor y balcón privado con Jacuzzi.</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irolago/?partner=6546&priority_room=luxo&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+    </div>
+    <details>
+      <summary>¿Qué incluyen las habitaciones?<span class="plus">+</span></summary>
+      <div class="body">
+        <div class="tags">
+          <span class="tag">Cama king</span><span class="tag">Wi-Fi</span><span class="tag">TV cable/satélite</span>
+          <span class="tag">Cafetera</span><span class="tag">Aire acondicionado</span><span class="tag">Baño privado</span>
+          <span class="tag">Secador</span><span class="tag">Toallas</span><span class="tag">Balcón</span>
+        </div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Servicios y gastronomía</div>
+    <details>
+      <summary>¿Qué servicios tiene este hotel?<span class="plus">+</span></summary>
+      <div class="body">
+        <div class="tags">
+          <span class="tag">Spa</span><span class="tag">Piscina</span><span class="tag">Gimnasio</span>
+          <span class="tag">Parqueadero</span><span class="tag">Transporte al aeropuerto</span><span class="tag">Transporte interno</span>
+          <span class="tag">Mini Club infantil</span><span class="tag">Boutique</span><span class="tag">Tours</span>
+          <span class="tag">Lobby Bar</span><span class="tag">Salón de belleza</span><span class="tag">Recepción 24h</span>
+          <span class="tag">Servicio a la habitación</span><span class="tag">Wi-Fi</span><span class="tag">Lavandería</span>
+          <span class="tag">Cajeros automáticos</span>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>¿Cuáles son sus restaurantes y bares?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Marca la extensión correspondiente desde tu habitación:</p>
+        <div class="extgrid">
+          <div class="extitem"><span class="name">Lobby Bar</span><span class="code">53</span></div>
+          <div class="extitem"><span class="name">Danau Bar</span><span class="code">60</span></div>
+          <div class="extitem"><span class="name">Caravel</span><span class="code">61</span></div>
+          <div class="extitem"><span class="name">Bar Yuluka</span><span class="code">65</span></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Directorio telefónico</div>
+    <details>
+      <summary>¿Qué extensión marco para los servicios del hotel?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Desde tu habitación marca:</p>
+        <div class="extgrid">
+          <div class="extitem"><span class="name">Ama de llaves</span><span class="code">731</span></div>
+          <div class="extitem"><span class="name">Recepción</span><span class="code">732</span></div>
+          <div class="extitem"><span class="name">Room Service</span><span class="code">733</span></div>
+          <div class="extitem"><span class="name">Botones</span><span class="code">734</span></div>
+          <div class="extitem"><span class="name">Administración</span><span class="code">735</span></div>
+          <div class="extitem"><span class="name">Gym y sala de belleza</span><span class="code">72</span></div>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>¿Cómo llamo a otra habitación dentro de Irotama Lago?<span class="plus">+</span></summary>
+      <div class="body">
+        <ul>
+          <li>Apartamentos de <strong>3 dígitos</strong>: marca <span class="dial">70</span> + número del apartamento.</li>
+          <li>Apartamentos de <strong>4 dígitos</strong>: marca <span class="dial">7</span> + número del apartamento.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ BUNGALOWS & BOHIOS ============ -->
+  <section class="panel" id="bb">
+    <div class="lead">
+      <h2>Irotama Bungalows &amp; Bohíos</h2>
+      <p>Cabañas ubicadas cerca de la playa y rodeadas de naturaleza, ideales para disfrutar en familia o con amigos. Es el hotel Pet Friendly del complejo.</p>
+      <div class="where">Km 14 vía Ciénaga, Playa Bello Horizonte, Santa Marta</div>
+    </div>
+    <div class="chips">
+      <div class="chip"><span class="n">74</span><span class="t">Cabañas</span></div>
+      <div class="chip"><span class="n">4</span><span class="t">Tipos</span></div>
+      <div class="chip"><span class="n">Pet</span><span class="t">Friendly</span></div>
+    </div>
+
+    <div class="section-title"><span class="bar"></span>Alojamiento y reservas</div>
+    <div class="rooms">
+      <div class="roomcard">
+        <div class="rc-head"><h4>Bohíos</h4><span class="rc-meta">217,5 m² · máx. 5 personas</span></div>
+        <p>Alojamiento privado y accesible, rodeado de naturaleza y cerca de la playa, con espacios adicionales (16 cabañas).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irohbb/?partner=6546&priority_room=stbh&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Bungalow Estándar</h4><span class="rc-meta">85,1 m² · máx. 4 personas</span></div>
+        <p>Totalmente equipado para un descanso privado: Wi-Fi, aire acondicionado, baño privado y más (44 cabañas).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irohbb/?partner=6546&priority_room=bgwst&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Bungalow Doble</h4><span class="rc-meta">132,9 m² · máx. 6 personas</span></div>
+        <p>Espacios más amplios equipados con servicios básicos, ideales para descansar o divertirse en grupo (12 cabañas).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irohbb/?partner=6546&priority_room=bgwsdb&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Bungalow Suite</h4><span class="rc-meta">170 m² · máx. 4 personas</span></div>
+        <p>Para los amantes de la playa: cama king, baño privado, Wi-Fi, servicio a la habitación y más (2 cabañas).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irohbb/?partner=6546&priority_room=bgwsut&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+    </div>
+
+    <div class="section-title"><span class="bar"></span>Servicios y gastronomía</div>
+    <details>
+      <summary>¿Qué servicios tiene este hotel?<span class="plus">+</span></summary>
+      <div class="body">
+        <div class="tags">
+          <span class="tag">Pet Friendly</span><span class="tag">Playa</span><span class="tag">Spa</span>
+          <span class="tag">Cancha de tenis</span><span class="tag">Sala de hospitalidad</span><span class="tag">Tours</span>
+          <span class="tag">Transporte interno</span><span class="tag">Recepción 24h</span><span class="tag">Servicio a la habitación</span>
+          <span class="tag">Wi-Fi</span><span class="tag">Lavandería</span><span class="tag">Ascensor</span>
+          <span class="tag">Pasarela en playa para silla de ruedas</span>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>¿Admite mascotas?<span class="plus">+</span></summary>
+      <div class="body"><p>Sí, es el hotel <strong>Pet Friendly</strong> del resort. Recomendamos revisar el reglamento de mascotas antes de tu llegada para una estadía segura y cómoda.</p></div>
+    </details>
+    <details>
+      <summary>¿Cuáles son sus restaurantes y bares?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Marca la extensión correspondiente desde tu habitación:</p>
+        <div class="extgrid">
+          <div class="extitem"><span class="name">La Barra Viva</span><span class="code">54</span></div>
+          <div class="extitem"><span class="name">Luruaco</span><span class="code">56</span></div>
+          <div class="extitem"><span class="name">Chiaro di Luna</span><span class="code">57</span></div>
+          <div class="extitem"><span class="name">Cocos Bar</span><span class="code">64</span></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Directorio telefónico</div>
+    <details>
+      <summary>¿Qué extensión marco para los servicios del hotel?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Desde tu habitación marca:</p>
+        <div class="extgrid">
+          <div class="extitem"><span class="name">Ama de llaves</span><span class="code">131</span></div>
+          <div class="extitem"><span class="name">Recepción</span><span class="code">132</span></div>
+          <div class="extitem"><span class="name">Room Service</span><span class="code">133</span></div>
+          <div class="extitem"><span class="name">Botones</span><span class="code">134</span></div>
+          <div class="extitem"><span class="name">Administración</span><span class="code">135</span></div>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>¿Cómo llamo a otra habitación dentro de Bungalows y Bohíos?<span class="plus">+</span></summary>
+      <div class="body">
+        <ul>
+          <li>Habitaciones <strong>1 a 9</strong>: marca <span class="dial">1000</span> + número de la habitación.</li>
+          <li>Habitaciones <strong>10 a 99</strong>: marca <span class="dial">100</span> + número de la habitación.</li>
+          <li>Habitaciones <strong>100 en adelante</strong>: marca <span class="dial">10</span> + número de la habitación.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ SOL ============ -->
+  <section class="panel" id="sol">
+    <div class="lead">
+      <h2>Irotama del Sol</h2>
+      <p>Hotel con suites y penthouses amplios, playa privada, piscina y áreas pensadas para el descanso en familia, pareja o grupos.</p>
+      <div class="where">Calle 121 #2-16, Bello Horizonte, Pozos Colorados, Santa Marta</div>
+    </div>
+    <div class="chips">
+      <div class="chip"><span class="n">87</span><span class="t">Habitaciones</span></div>
+      <div class="chip"><span class="n">5</span><span class="t">Categorías</span></div>
+      <div class="chip"><span class="n">hasta 517</span><span class="t">m² penthouse</span></div>
+    </div>
+
+    <div class="section-title"><span class="bar"></span>Alojamiento y reservas</div>
+    <div class="rooms">
+      <div class="roomcard">
+        <div class="rc-head"><h4>Junior Suite</h4><span class="rc-meta">65–80 m²</span></div>
+        <p>Cuarto, baño privado, sala con sofá y balcón. Incluye Wi-Fi, TV, frigobar, aire acondicionado, caja de seguridad y teléfono (39 habitaciones).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irodsl/?partner=6546&priority_room=junior&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Suite 2 habitaciones</h4><span class="rc-meta">103–116 m² · 6 personas</span></div>
+        <p>Dos habitaciones, baño privado, balcón y cocina totalmente equipada, ideal para familias o grupos (31 habitaciones).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irodsl/?partner=6546&priority_room=suite&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Suite 3 habitaciones</h4><span class="rc-meta">158–180 m² · 6 personas</span></div>
+        <p>Tres habitaciones, baño privado, balcón y cocina equipada, con todo el espacio para grupos grandes (3 habitaciones).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irodsl/?partner=6546&priority_room=suitetwo&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Luxury</h4><span class="rc-meta">174 m² · 2 o 3 habitaciones</span></div>
+        <p>Baño privado, sala con sofá, cocina equipada, comedor y balcón con tina de hidromasaje. Wi-Fi, TV, frigobar, A/C, caja de seguridad y secador (11 habitaciones).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irodsl/?partner=6546&priority_room=luxurythree&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Penthouse</h4><span class="rc-meta">319–517 m² · 3 habitaciones</span></div>
+        <p>Baño privado, sala con sofá, cocina equipada, comedor y balcón con piscina junto a tina de hidromasaje (3 habitaciones).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irodsl/?partner=6546&priority_room=penthouse&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+    </div>
+    <details>
+      <summary>¿Qué incluyen las habitaciones?<span class="plus">+</span></summary>
+      <div class="body">
+        <div class="tags">
+          <span class="tag">Wi-Fi</span><span class="tag">Televisión</span><span class="tag">Frigobar</span>
+          <span class="tag">Aire acondicionado</span><span class="tag">Caja de seguridad</span><span class="tag">Teléfono</span>
+          <span class="tag">Balcón</span><span class="tag">Cocina equipada (suites y superiores)</span>
+        </div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Servicios y gastronomía</div>
+    <details>
+      <summary>¿Qué servicios tiene este hotel?<span class="plus">+</span></summary>
+      <div class="body">
+        <div class="tags">
+          <span class="tag">Piscina</span><span class="tag">Mini Market</span><span class="tag">Parqueadero</span>
+          <span class="tag">Transporte al aeropuerto</span><span class="tag">Transporte interno</span><span class="tag">Tours</span>
+          <span class="tag">Servicio a la habitación</span><span class="tag">Wi-Fi</span><span class="tag">Lavandería</span>
+          <span class="tag">Ascensor</span><span class="tag">Consigna de equipajes</span>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>¿Cuáles son sus restaurantes y bares?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Marca la extensión correspondiente desde tu habitación:</p>
+        <div class="extgrid">
+          <div class="extitem"><span class="name">El Búho</span><span class="code">55</span></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Directorio telefónico</div>
+    <details>
+      <summary>¿Qué extensión marco para los servicios del hotel?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Desde tu habitación marca:</p>
+        <div class="extgrid">
+          <div class="extitem"><span class="name">Ama de llaves</span><span class="code">231</span></div>
+          <div class="extitem"><span class="name">Recepción</span><span class="code">232</span></div>
+          <div class="extitem"><span class="name">Room Service</span><span class="code">233</span></div>
+          <div class="extitem"><span class="name">Botones</span><span class="code">234</span></div>
+          <div class="extitem"><span class="name">Administración</span><span class="code">235</span></div>
+          <div class="extitem"><span class="name">Minimarket</span><span class="code">66</span></div>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>¿Cómo llamo a otra habitación dentro de Irotama del Sol?<span class="plus">+</span></summary>
+      <div class="body">
+        <ul>
+          <li>Apartamentos de <strong>3 dígitos</strong>: marca <span class="dial">20</span> + número del apartamento.</li>
+          <li>Apartamentos de <strong>4 dígitos</strong>: marca <span class="dial">2</span> + número del apartamento.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ MAR ============ -->
+  <section class="panel" id="mar">
+    <div class="lead">
+      <h2>Irotama del Mar</h2>
+      <p>Hotel frente al Caribe con suites y apartamentos de lujo, zona de marina y vistas al mar desde el balcón. Pensado para familias y grupos.</p>
+      <div class="where">Km 14 vía Ciénaga, Bello Horizonte, Santa Marta</div>
+    </div>
+    <div class="chips">
+      <div class="chip"><span class="n">47</span><span class="t">Habitaciones</span></div>
+      <div class="chip"><span class="n">6</span><span class="t">Categorías</span></div>
+      <div class="chip"><span class="n">53–151</span><span class="t">m² por hab.</span></div>
+    </div>
+
+    <div class="section-title"><span class="bar"></span>Alojamiento y reservas</div>
+    <div class="rooms">
+      <div class="roomcard">
+        <div class="rc-head"><h4>Junior Suite</h4><span class="rc-meta">53 m²</span></div>
+        <p>Comodidades básicas con balcón y vista a los atardeceres en el Caribe: Wi-Fi, frigobar, baño privado, TV por cable, aire acondicionado y caja de seguridad (11 habitaciones).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irodmr/?partner=6546&priority_room=junio&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Suite</h4><span class="rc-meta">98,75 m² · doble habitación</span></div>
+        <p>Doble habitación, baño privado, sala comedor y cocina. Cama king, TV por cable, aire acondicionado y balcón con vista a la playa (12 habitaciones).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irodmr/?partner=6546&priority_room=suite&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Luxury</h4><span class="rc-meta">85 m²</span></div>
+        <p>Espacios amplios con cocina, baño privado, sala, clóset y balcón con tina de hidromasaje. A/C, Wi-Fi, TV por cable, frigobar y radio despertador (7 habitaciones).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irodmr/?partner=6546&priority_room=luxutyone&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Luxury 2 habitaciones</h4><span class="rc-meta">99 m² · 2 habitaciones</span></div>
+        <p>Dos habitaciones, cocina equipada, sala de estar, baño y balcón privado con bañera de hidromasaje. A/C, Wi-Fi y TV por cable.</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irodmr/?partner=6546&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Luxury 3 habitaciones</h4><span class="rc-meta">151 m² · 3 habitaciones</span></div>
+        <p>Tres habitaciones, cocina, sala, baño privado y balcón con jacuzzi. A/C, Wi-Fi gratis, TV por cable y frigobar (14 habitaciones).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irodmr/?partner=6546&priority_room=luxurythree&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Penthouse</h4><span class="rc-meta">+120 m²</span></div>
+        <p>En la parte superior del complejo, con terraza amplia, piscina y tina de hidromasaje con vista al mar. Wi-Fi, TV y aire acondicionado (2 penthouse).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irodmr/?partner=6546&priority_room=penthouse&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+    </div>
+    <details>
+      <summary>¿Qué incluyen las habitaciones?<span class="plus">+</span></summary>
+      <div class="body">
+        <div class="tags">
+          <span class="tag">Wi-Fi</span><span class="tag">TV por cable</span><span class="tag">Aire acondicionado</span>
+          <span class="tag">Frigobar</span><span class="tag">Caja de seguridad</span><span class="tag">Baño privado</span>
+          <span class="tag">Balcón</span><span class="tag">Jacuzzi (luxury)</span>
+        </div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Servicios</div>
+    <details>
+      <summary>¿Qué servicios tiene este hotel?<span class="plus">+</span></summary>
+      <div class="body">
+        <div class="tags">
+          <span class="tag">Playa</span><span class="tag">Marina</span><span class="tag">Piscina al aire libre</span>
+          <span class="tag">Canchas de tenis</span><span class="tag">Club infantil</span><span class="tag">Wi-Fi</span>
+          <span class="tag">Servicio de limpieza diario</span>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>¿Cuáles son sus restaurantes y bares?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Marca la extensión correspondiente desde tu habitación:</p>
+        <div class="extgrid">
+          <div class="extitem"><span class="name">Piso 16</span><span class="code">62</span></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Directorio telefónico</div>
+    <details>
+      <summary>¿Qué extensión marco para los servicios del hotel?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Desde tu habitación marca:</p>
+        <div class="extgrid">
+          <div class="extitem"><span class="name">Ama de llaves</span><span class="code">431</span></div>
+          <div class="extitem"><span class="name">Recepción</span><span class="code">432</span></div>
+          <div class="extitem"><span class="name">Room Service</span><span class="code">433</span></div>
+          <div class="extitem"><span class="name">Botones</span><span class="code">434</span></div>
+          <div class="extitem"><span class="name">Administración</span><span class="code">435</span></div>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>¿Cómo llamo a otra habitación dentro de Irotama del Mar?<span class="plus">+</span></summary>
+      <div class="body">
+        <ul>
+          <li>Marca <span class="dial">40</span> + número del apartamento.</li>
+          <li>Apartamentos de <strong>4 dígitos</strong>: marca <span class="dial">4</span> + número del apartamento.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ XXI ============ -->
+  <section class="panel" id="xxi">
+    <div class="lead">
+      <h2>Irotama XXI</h2>
+      <p>Hotel práctico dentro del complejo, con habitaciones y junior suites equipadas y acceso a todas las actividades, playa privada y servicios del resort.</p>
+      <div class="where">Cra 2 #107-32, Playa Bello Horizonte, Santa Marta</div>
+    </div>
+    <div class="chips">
+      <div class="chip"><span class="n">42</span><span class="t">Habitaciones</span></div>
+      <div class="chip"><span class="n">2</span><span class="t">Categorías</span></div>
+      <div class="chip"><span class="n">48–61</span><span class="t">m² por hab.</span></div>
+    </div>
+
+    <div class="section-title"><span class="bar"></span>Alojamiento y reservas</div>
+    <div class="rooms">
+      <div class="roomcard">
+        <div class="rc-head"><h4>Estándar</h4><span class="rc-meta">48 m² · 2 personas</span></div>
+        <p>Totalmente equipada para un descanso placentero: baño privado, Wi-Fi, aire acondicionado y más (34 habitaciones).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/iroxxl/?partner=6546&priority_room=std&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Junior Suite</h4><span class="rc-meta">61 m² · máx. 4 personas</span></div>
+        <p>Un espacio más amplio equipado con servicios básicos para descansar tranquilamente durante tus vacaciones (8 habitaciones).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/iroxxl/?partner=6546&priority_room=jnst&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+    </div>
+
+    <div class="section-title"><span class="bar"></span>Servicios y gastronomía</div>
+    <details>
+      <summary>¿Qué servicios tiene este hotel?<span class="plus">+</span></summary>
+      <div class="body">
+        <div class="tags">
+          <span class="tag">Jacuzzi</span><span class="tag">Parqueadero</span><span class="tag">Recepción 24h</span>
+          <span class="tag">Transporte al aeropuerto</span><span class="tag">Transporte interno</span><span class="tag">Tours</span>
+          <span class="tag">Servicio a la habitación</span><span class="tag">Wi-Fi</span><span class="tag">Lavandería</span>
+          <span class="tag">Ascensor</span><span class="tag">Consigna de equipajes</span><span class="tag">Estación de cómputo</span>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>¿Cuáles son sus restaurantes y bares?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Marca la extensión correspondiente desde tu habitación:</p>
+        <div class="extgrid">
+          <div class="extitem"><span class="name">Piso 12</span><span class="code">59</span></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Directorio telefónico</div>
+    <details>
+      <summary>¿Qué extensión marco para los servicios del hotel?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Desde tu habitación marca:</p>
+        <div class="extgrid">
+          <div class="extitem"><span class="name">Ama de llaves</span><span class="code">531</span></div>
+          <div class="extitem"><span class="name">Recepción</span><span class="code">532</span></div>
+          <div class="extitem"><span class="name">Room Service</span><span class="code">533</span></div>
+          <div class="extitem"><span class="name">Botones</span><span class="code">534</span></div>
+          <div class="extitem"><span class="name">Administración</span><span class="code">535</span></div>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>¿Cómo llamo a otra habitación dentro de Irotama XXI?<span class="plus">+</span></summary>
+      <div class="body">
+        <ul>
+          <li>Apartamentos de <strong>3 dígitos</strong>: marca <span class="dial">50</span> + número del apartamento.</li>
+          <li>Apartamentos de <strong>3 dígitos, tipo B</strong>: marca <span class="dial">52</span> + número del apartamento.</li>
+          <li>Apartamentos de <strong>4 dígitos, tipo B (Hipocampo)</strong>: marca <span class="dial">52</span> + los tres últimos dígitos del apartamento.</li>
+          <li>Apartamentos de <strong>4 dígitos, tipo A (Hipocampo)</strong>: marca <span class="dial">51</span> + los tres últimos dígitos del apartamento.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ RESERVADO ============ -->
+  <section class="panel" id="reservado">
+    <div class="lead">
+      <h2>Irotama Reservado</h2>
+      <p>Apartasuites tipo apartamento con cocina, equipadas con servicios esenciales y de lujo, dentro del resort y con acceso a playa privada, spa y zonas deportivas.</p>
+      <div class="where">Cra 2 #112-61, Pozos Colorados, Santa Marta</div>
+    </div>
+    <div class="chips">
+      <div class="chip"><span class="n">55</span><span class="t">Apartasuites</span></div>
+      <div class="chip"><span class="n">5</span><span class="t">Categorías</span></div>
+      <div class="chip"><span class="n">47–174</span><span class="t">m² por hab.</span></div>
+    </div>
+
+    <div class="section-title"><span class="bar"></span>Alojamiento y reservas</div>
+    <div class="rooms">
+      <div class="roomcard">
+        <div class="rc-head"><h4>Junior Suite</h4><span class="rc-meta">47,72 m² · máx. 4 personas</span></div>
+        <p>Apartasuite equipado con servicios esenciales: Wi-Fi, baño privado, balcón y más, para una experiencia de confort y tranquilidad (32 apartamentos).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irorvd/?partner=6546&priority_room=junior&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Suite</h4><span class="rc-meta">137,58 m² · máx. 6 personas</span></div>
+        <p>Camas tipo king, baño privado, balcón y cocina, ideal para familias o grupos (7 apartamentos).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irorvd/?partner=6546&priority_room=suite&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Luxury</h4><span class="rc-meta">174 m² · máx. 6 personas</span></div>
+        <p>Espacios adicionales y una amplia vista desde el balcón con jacuzzi para una experiencia inolvidable (14 apartamentos).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irorvd/?partner=6546&priority_room=luxutyone&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Luxury 2 habitaciones</h4><span class="rc-meta">148 m²</span></div>
+        <p>Dos habitaciones, cocina completa, baño privado, sala de estar y balcón con jacuzzi privado y vista al mar Caribe (6 apartamentos).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irorvd/?partner=6546&priority_room=luxutytwo&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+      <div class="roomcard">
+        <div class="rc-head"><h4>Luxury 3 habitaciones</h4><span class="rc-meta">174 m² · máx. 6 personas</span></div>
+        <p>Tres habitaciones, cocina completa, sala de estar y balcón privado con jacuzzi. Wi-Fi de alta velocidad, TV de pantalla plana y aire acondicionado (4 apartamentos).</p>
+        <a class="btn-res" href="https://www.ghlhoteles.com/bookcore/availability/tomorrow/irorvd/?partner=6546&priority_room=luxurythree&utm_source=ghlplusapp&utm_medium=habitaciones">Reservar</a>
+      </div>
+    </div>
+    <details>
+      <summary>¿Qué incluyen los apartamentos?<span class="plus">+</span></summary>
+      <div class="body">
+        <div class="tags">
+          <span class="tag">Wi-Fi</span><span class="tag">TV pantalla plana</span><span class="tag">Aire acondicionado</span>
+          <span class="tag">Cocina</span><span class="tag">Baño privado</span><span class="tag">Sala de estar</span>
+          <span class="tag">Balcón</span><span class="tag">Jacuzzi (luxury)</span>
+        </div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Servicios y gastronomía</div>
+    <details>
+      <summary>¿Qué servicios tiene este hotel?<span class="plus">+</span></summary>
+      <div class="body">
+        <div class="tags">
+          <span class="tag">Piscina</span><span class="tag">Zonas húmedas</span><span class="tag">Terraza</span>
+          <span class="tag">Parqueadero</span><span class="tag">Transporte interno</span><span class="tag">Tours</span>
+          <span class="tag">Restaurante</span>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>¿Cuáles son sus restaurantes y bares?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Marca la extensión correspondiente desde tu habitación:</p>
+        <div class="extgrid">
+          <div class="extitem"><span class="name">Snack Bar</span><span class="code">71</span></div>
+          <div class="extitem"><span class="name">Bar del Reservado</span><span class="code">—</span></div>
+        </div>
+        <div class="note">El Bar del Reservado no figura con extensión propia en el directorio interno; para servicio comunícate con Room Service.</div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="bar"></span>Directorio telefónico</div>
+    <details>
+      <summary>¿Qué extensión marco para los servicios del hotel?<span class="plus">+</span></summary>
+      <div class="body">
+        <p>Desde tu habitación marca:</p>
+        <div class="extgrid">
+          <div class="extitem"><span class="name">Ama de llaves</span><span class="code">631</span></div>
+          <div class="extitem"><span class="name">Recepción</span><span class="code">632</span></div>
+          <div class="extitem"><span class="name">Room Service</span><span class="code">633</span></div>
+          <div class="extitem"><span class="name">Botones</span><span class="code">634</span></div>
+          <div class="extitem"><span class="name">Administración</span><span class="code">635</span></div>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>¿Cómo llamo a otra habitación dentro de Irotama Reservado?<span class="plus">+</span></summary>
+      <div class="body">
+        <ul>
+          <li>Apartamentos de <strong>3 dígitos</strong>: marca <span class="dial">60</span> + número del apartamento.</li>
+          <li>Apartamentos de <strong>4 dígitos</strong>: marca <span class="dial">6</span> + número del apartamento.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+</div>
+
+<footer>
+  Información tomada de <a href="https://www.irotama.com">irotama.com</a> · Registro Nacional de Turismo: 254<br>
+  Irotama Resort · GHL Hoteles
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.panel');
+  tabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      const target = tab.dataset.target;
+      tabs.forEach(t=>t.classList.remove('active'));
+      panels.forEach(p=>p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(target).classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+</script>
+</body>
+</html>
