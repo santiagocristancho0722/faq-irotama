@@ -86,6 +86,16 @@
   .roomcard h4{color:var(--navy);font-size:1.06rem;font-weight:700}
   .rc-meta{color:var(--mid);font-size:.84rem;font-weight:600}
   .roomcard p{color:#3a4a57;font-size:.92rem;margin:8px 0 13px}
+
+  /* ADVISOR CARDS */
+  .advisors{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+  .advisorcard{background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:15px 18px}
+  .advisorcard h4{color:var(--navy);font-size:1rem;font-weight:700;margin-bottom:6px}
+  .advisorcard .adv-phone{color:#3a4a57;font-size:.9rem;margin-bottom:2px}
+  .advisorcard .adv-mail a{color:var(--mid);font-size:.9rem;text-decoration:none}
+  .advisorcard .adv-mail a:hover{text-decoration:underline}
+  @media(max-width:600px){.advisors{grid-template-columns:1fr}}
   .btn-res{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;
     font-weight:600;font-size:.86rem;padding:9px 20px;border-radius:8px;transition:background .2s}
   .btn-res:hover{background:var(--mid)}
@@ -200,6 +210,7 @@
     <button class="tab" data-target="mar">Irotama del Mar</button>
     <button class="tab" data-target="xxi">Irotama XXI</button>
     <button class="tab" data-target="reservado">Irotama Reservado</button>
+    <button class="tab" data-target="asesores">Asesores Comerciales</button>
   </div>
 </div>
 
@@ -1020,6 +1031,77 @@
         </ul>
       </div>
     </details>
+  </section>
+
+  <!-- ============ ASESORES COMERCIALES ============ -->
+  <section class="panel" id="asesores">
+    <div class="lead">
+      <h2>Asesores Comerciales</h2>
+      <p>Contacta directamente a tu asesor comercial según la ciudad en la que gestionas tu reserva o evento.</p>
+    </div>
+
+    <div class="section-title"><span class="bar"></span>Santa Marta</div>
+    <div class="advisors">
+      <div class="advisorcard">
+        <h4>Vera Judith Alvear Cantillo</h4>
+        <div class="adv-phone">Cel. 3165296992</div>
+        <div class="adv-mail"><a href="mailto:veralvear@irotama.com">veralvear@irotama.com</a></div>
+      </div>
+      <div class="advisorcard">
+        <h4>Alexis María Marín Camacho</h4>
+        <div class="adv-phone">Cel. 3165294440</div>
+        <div class="adv-mail"><a href="mailto:alexismarin@irotama.com">alexismarin@irotama.com</a></div>
+      </div>
+      <div class="advisorcard">
+        <h4>Aristides Pinedo</h4>
+        <div class="adv-phone">Cel. 3176370872</div>
+        <div class="adv-mail"><a href="mailto:aristidespinedo@irotama.com">aristidespinedo@irotama.com</a></div>
+      </div>
+      <div class="advisorcard">
+        <h4>Nicolas Molina</h4>
+        <div class="adv-phone">Cel. 3182528150</div>
+        <div class="adv-mail"><a href="mailto:nicolasmolina@irotama.com">nicolasmolina@irotama.com</a></div>
+      </div>
+      <div class="advisorcard">
+        <h4>Jefferson Sarmiento</h4>
+        <div class="adv-phone">Cel. 3157223593</div>
+        <div class="adv-mail"><a href="mailto:jeffersonsarmiento@irotama.com">jeffersonsarmiento@irotama.com</a></div>
+      </div>
+    </div>
+
+    <div class="section-title"><span class="bar"></span>Bogotá</div>
+    <div class="advisors">
+      <div class="advisorcard">
+        <h4>Aminta Martinez Gil</h4>
+        <div class="adv-phone">Cel. 3165290220</div>
+        <div class="adv-mail"><a href="mailto:amintamartinez@irotama.com">amintamartinez@irotama.com</a></div>
+      </div>
+      <div class="advisorcard">
+        <h4>Yaneth Cuestas Sanchez</h4>
+        <div class="adv-phone">Cel. 3183733744</div>
+        <div class="adv-mail"><a href="mailto:yanethcuestas@irotama.com">yanethcuestas@irotama.com</a></div>
+      </div>
+      <div class="advisorcard">
+        <h4>Viviana Rodriguez Coronado</h4>
+        <div class="adv-phone">Cel. 3176370872</div>
+        <div class="adv-mail"><a href="mailto:vivianarodriguez@irotama.com">vivianarodriguez@irotama.com</a></div>
+      </div>
+      <div class="advisorcard">
+        <h4>Esmeralda Triana</h4>
+        <div class="adv-phone">Cel. 3174234492</div>
+        <div class="adv-mail"><a href="mailto:esmeraldatriana@irotama.com">esmeraldatriana@irotama.com</a></div>
+      </div>
+      <div class="advisorcard">
+        <h4>Isman Robayo</h4>
+        <div class="adv-phone">Cel. 3165281765</div>
+        <div class="adv-mail"><a href="mailto:ismanrobayo@irotama.com">ismanrobayo@irotama.com</a></div>
+      </div>
+      <div class="advisorcard">
+        <h4>William Galeano</h4>
+        <div class="adv-phone">Cel. 3155452897</div>
+        <div class="adv-mail"><a href="mailto:williamgaleano@irotama.com">williamgaleano@irotama.com</a></div>
+      </div>
+    </div>
   </section>
 
 </div>
